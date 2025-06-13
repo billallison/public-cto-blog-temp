@@ -898,3 +898,43 @@ figure {
     text-align: right;
     font-size: .875rem;
     padding: .5rem 0; }
+
+/* Stager layout override to fix sidebar positioning - FINAL FIX */
+@media (min-width: 800px) {
+  body #stager {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important; }
+    body #stager main {
+      flex: 1 !important;
+      overflow: auto !important;
+      max-width: calc(100% - 250px) !important; }
+    body #stager aside.aside-blog,
+    body #stager aside.aside-default {
+      position: static !important;
+      background: rgba(255, 255, 255, 0.2) !important;
+      left: auto !important;
+      top: auto !important;
+      bottom: auto !important;
+      width: 250px !important;
+      flex-shrink: 0 !important; }
+      body #stager aside.aside-blog .inner-container,
+      body #stager aside.aside-default .inner-container {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        height: auto; }
+    body #stager .toggles .sider-open {
+      display: none !important; } }
+
+/* Additional override for larger screens */
+@media (min-width: 1000px) {
+  body #stager main {
+    max-width: calc(100% - 300px) !important; }
+  body #stager aside.aside-blog {
+    width: 300px !important; } }
+
+@media (min-width: 1500px) {
+  body #stager aside.aside-default {
+    width: 300px !important; } }
