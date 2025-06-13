@@ -19,7 +19,7 @@
         flex-direction: row !important;
         align-items: center !important;
         justify-content: flex-end !important;
-        padding: 0 !important;
+        padding: 0 1rem 0 0 !important; /* Add right padding for proper spacing */
     }
     
     #header .menu-main .menu-container {
