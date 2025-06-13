@@ -920,7 +920,7 @@ figure {
       left: auto !important;
       top: auto !important;
       bottom: auto !important;
-      width: 250px !important;
+      width: 280px !important;
       flex-shrink: 0 !important; }
       #stager:has(aside.aside-blog) aside.aside-blog .inner-container,
       #stager:has(aside.aside-blog) aside.aside-default .inner-container,
@@ -929,7 +929,8 @@ figure {
         position: sticky;
         top: 0;
         z-index: 20;
-        height: auto; }
+        height: auto;
+        padding: 0.25rem !important; }
     #stager:has(aside.aside-blog) .toggles .sider-open,
     #stager:has(aside.aside-default) .toggles .sider-open {
       display: none !important; } }
@@ -960,3 +961,35 @@ figure {
 @media (min-width: 1800px) {
   #bloglist .card-post-container {
     width: 33.33% !important; } }
+
+/* Fix sidebar styling issues */
+/* Reduce excessive margin around sidebar cards and make them wider */
+.card-sider-container {
+  margin: 0.25rem !important; }
+
+/* Make the individual card containers fill more width */
+.card-sider {
+  margin: 0.25rem 0 !important;
+  padding: 0.75rem !important;
+  width: calc(100% - 0.5rem) !important;
+  box-sizing: border-box !important; }
+
+/* Fix category count positioning to stay within white containers */
+.dumbbell {
+  position: relative !important;
+  overflow: visible !important; }
+  .dumbbell .count,
+  .dumbbell > *:last-child {
+    position: relative !important;
+    right: auto !important;
+    margin-left: 0.25rem !important; }
+
+/* Ensure sidebar inner container has proper padding */
+aside.aside-blog .inner-container,
+aside.aside-default .inner-container {
+  padding: 0.5rem !important; }
+
+/* Fix any count elements that are escaping containers */
+.card-sider {
+  overflow: visible !important;
+  position: relative !important; }
