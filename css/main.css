@@ -899,19 +899,22 @@ figure {
     font-size: .875rem;
     padding: .5rem 0; }
 
-/* Stager layout override to fix sidebar positioning - FINAL FIX */
+/* Stager layout override - only apply flexbox when sidebar is present */
 @media (min-width: 800px) {
-  body #stager {
+  #stager:has(aside.aside-blog),
+  #stager:has(aside.aside-default) {
     display: flex !important;
     flex-direction: row !important;
     align-items: stretch !important;
     justify-content: flex-start !important; }
-    body #stager main {
+    #stager:has(aside.aside-blog) main,
+    #stager:has(aside.aside-default) main {
       flex: 1 !important;
-      overflow: auto !important;
-      max-width: calc(100% - 250px) !important; }
-    body #stager aside.aside-blog,
-    body #stager aside.aside-default {
+      overflow: auto !important; }
+    #stager:has(aside.aside-blog) aside.aside-blog,
+    #stager:has(aside.aside-blog) aside.aside-default,
+    #stager:has(aside.aside-default) aside.aside-blog,
+    #stager:has(aside.aside-default) aside.aside-default {
       position: static !important;
       background: rgba(255, 255, 255, 0.2) !important;
       left: auto !important;
@@ -919,22 +922,41 @@ figure {
       bottom: auto !important;
       width: 250px !important;
       flex-shrink: 0 !important; }
-      body #stager aside.aside-blog .inner-container,
-      body #stager aside.aside-default .inner-container {
+      #stager:has(aside.aside-blog) aside.aside-blog .inner-container,
+      #stager:has(aside.aside-blog) aside.aside-default .inner-container,
+      #stager:has(aside.aside-default) aside.aside-blog .inner-container,
+      #stager:has(aside.aside-default) aside.aside-default .inner-container {
         position: sticky;
         top: 0;
         z-index: 20;
         height: auto; }
-    body #stager .toggles .sider-open {
+    #stager:has(aside.aside-blog) .toggles .sider-open,
+    #stager:has(aside.aside-default) .toggles .sider-open {
       display: none !important; } }
 
-/* Additional override for larger screens */
-@media (min-width: 1000px) {
-  body #stager main {
-    max-width: calc(100% - 300px) !important; }
-  body #stager aside.aside-blog {
-    width: 300px !important; } }
+/* Ensure blog listing page layout is not affected by stager flexbox */
+#bloglist {
+  display: flex !important;
+  flex-flow: wrap !important; }
+  #bloglist .card-post-container {
+    flex: none !important;
+    max-width: none !important;
+    display: block !important; }
+    #bloglist .card-post-container .card-post {
+      width: 100% !important;
+      height: auto !important;
+      min-height: 200px !important;
+      display: block !important;
+      flex: none !important; }
 
-@media (min-width: 1500px) {
-  body #stager aside.aside-default {
-    width: 300px !important; } }
+/* Reset any inherited flex properties on blog listing cards */
+.card-post-container * {
+  flex: none !important; }
+
+@media (min-width: 1200px) {
+  #bloglist .card-post-container {
+    width: 50% !important; } }
+
+@media (min-width: 1800px) {
+  #bloglist .card-post-container {
+    width: 33.33% !important; } }
