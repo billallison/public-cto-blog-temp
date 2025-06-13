@@ -1,0 +1,49 @@
+/* Navigation Fix for UC Berkeley CTO Blog */
+
+/* Remove bullet points from navigation menu */
+.menu {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.menu .menu-item {
+    list-style: none !important;
+    margin: 0 0.5rem !important;
+}
+
+/* Force horizontal navigation on larger screens */
+@media (min-width: 800px) {
+    #header .menu-main {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        padding: 0 !important;
+    }
+    
+    #header .menu-main .menu-container {
+        padding: 0 !important;
+    }
+    
+    #header .menu-main .menu {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    #header .header .menu-main-toggle {
+        display: none !important;
+    }
+}
+
+/* Mobile menu should be hidden by default on large screens */
+@media (min-width: 800px) {
+    #header .header .menu-main-toggle .open {
+        display: none !important;
+    }
+}
