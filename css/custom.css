@@ -1,0 +1,795 @@
+/* Custom styles for UC Berkeley CTO Blog */
+
+/* Accessibility improvements */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #003262;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Improve focus indicators for keyboard navigation */
+a:focus,
+button:focus,
+[tabindex]:focus {
+    outline: 2px solid #FDB515; /* Berkeley Gold */
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Ensure menu buttons are properly styled as buttons */
+.menu-main-toggle button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 8px;
+    margin: 0;
+}
+
+.menu-main-toggle button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style toggle buttons consistently */
+.toggles button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 8px;
+    margin: 0;
+    display: inline-block;
+}
+
+.toggles button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Style menu tree buttons */
+.menu-tree-title .container button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 4px;
+    margin: 0;
+}
+
+.menu-tree-title .container button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Global typography improvements */
+body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+/* Berkeley Blue Header Styling */
+#header {
+    background: #003262 !important; /* Berkeley Blue - override background image */
+    background-color: #003262 !important; /* Berkeley Blue */
+}
+
+.header {
+    background-color: #003262 !important; /* Berkeley Blue */
+}
+
+.header .title {
+    color: white !important;
+}
+
+.header .title a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.header .title a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.header .title a:visited {
+    color: white !important;
+}
+
+.header .title a:link {
+    color: white !important;
+}
+
+.header .title a:active {
+    color: white !important;
+}
+
+/* More specific selectors to override any theme styles */
+#header .title a,
+#header .title a:hover,
+#header .title a:visited,
+#header .title a:link,
+#header .title a:active {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Even more specific with header ID and title class */
+#header .header .title a,
+#header .header .title a:hover,
+#header .header .title a:visited,
+#header .header .title a:link,
+#header .header .title a:active {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Hide breadcrumbs completely */
+#breadcrumb {
+    display: none !important;
+}
+
+/* Hide table of contents */
+.toc,
+#TableOfContents {
+    display: none !important;
+}
+
+/* Hide TOC toggle button in floating controls */
+.toggles a[href="#TableOfContents"] {
+    display: none !important;
+}
+
+/* Menu styling - ALL white text in header */
+.menu-main {
+    background-color: #003262 !important; /* Berkeley Blue */
+}
+
+.menu-main .menu-item a {
+    color: white !important;
+}
+
+.menu-main .menu-item a:hover {
+    color: white !important; /* Keep white on hover */
+}
+
+.menu-main .menu-item a.active {
+    color: white !important; /* Keep white for active items */
+    font-weight: bold; /* Make active items bold instead of gold */
+}
+
+/* Mobile menu toggle buttons - white */
+.menu-main-toggle a {
+    color: white !important;
+}
+
+.menu-main-toggle a:hover {
+    color: white !important; /* Keep white on hover */
+}
+
+/* Berkeley Blue Footer Styling */
+#footer {
+    background-color: #003262 !important; /* Berkeley Blue */
+}
+
+.copyright {
+    background-color: #003262 !important; /* Berkeley Blue */
+    color: #FDB515 !important; /* Berkeley Gold */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+.copyright span {
+    color: #FDB515 !important; /* Berkeley Gold */
+}
+
+.copyright i {
+    color: #FDB515 !important; /* Berkeley Gold for icons */
+}
+
+/* Footer links styling */
+.footer-links {
+    font-size: 0.875rem !important;
+}
+
+.footer-links a {
+    color: #FDB515 !important; /* Berkeley Gold */
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+.footer-links a:hover {
+    color: white !important; /* White on hover */
+    text-decoration: underline !important;
+}
+
+/* Restore the theme's semi-transparent background to see the bg.jpg image */
+/* Remove the white background overrides to restore the Walden theme look */
+
+/* Improved card styling for uniform look like Walden demo */
+/* Common card styles for all card types */
+.card-post, .card-headline {
+    background-color: white !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    /* Remove height: 100% to allow natural height */
+    display: flex !important;
+    flex-direction: column !important;
+    /* Remove justify-content: space-between for natural spacing */
+    margin-bottom: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Common title styles for all cards - COMPACT PADDING */
+.card-post .card-post-title,
+.card-headline .card-headline-title {
+    padding: 1rem 1.5rem 0.5rem !important; /* Reduced top and bottom padding */
+    font-weight: 600 !important;
+    font-size: 1.25rem !important; /* Slightly smaller title */
+    white-space: normal !important;
+    line-height: 1.3 !important; /* Tighter line height */
+    overflow: visible !important;
+}
+
+.card-post .card-post-title a,
+.card-headline .card-headline-title {
+    color: #333 !important;
+}
+
+.card-post .card-post-title a:hover,
+.card-headline .card-headline-title:hover {
+    color: #1e40af !important;
+}
+
+/* Common content styles for all cards - N.B. .card-post > p was too broad, use .card-post-summary */
+.card-headline .card-headline-summary { /* For homepage cards */
+    background-color: white !important;
+    padding: 0 1.5rem 1.5rem !important; /* Adjusted padding for consistency */
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: #4b5563 !important;
+    margin-bottom: 0 !important; /* Summary is often last text element before meta */
+    flex-grow: 1; /* Allow summary to grow */
+}
+
+/* Blog post summary styling - COMPACT LAYOUT */
+.card-post-summary {
+    padding: 0.5rem 1.5rem 1rem !important; /* Reduced padding */
+    margin: 0 !important; /* Remove outer margins */
+    color: #4b5563 !important;
+    font-size: 0.95rem !important; /* Slightly smaller text */
+    line-height: 1.5 !important; /* Tighter line height */
+    max-height: 120px !important; /* Limit summary height */
+    overflow: hidden !important; /* Hide overflow */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 5 !important; /* Limit to 5 lines */
+    line-clamp: 5 !important; /* Standard property for compatibility */
+    -webkit-box-orient: vertical !important;
+}
+
+.card-post-summary p {
+    margin: 0.25rem 0 !important; /* Tighter paragraph spacing */
+    padding: 0 !important;
+}
+.card-post-summary p:not(:last-child) {
+    margin-bottom: 0.5rem !important; /* Reduced space between paragraphs */
+}
+
+/* Ensure text truncation works in all browsers */
+.card-post-summary {
+    /* Fallback for browsers that don't support line-clamp */
+    position: relative;
+}
+
+.card-post-summary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 1.2em;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 70%);
+    pointer-events: none;
+}
+
+/* Hide the gradient for browsers that support line-clamp */
+@supports (line-clamp: 5) {
+    .card-post-summary::after {
+        display: none;
+    }
+}
+
+/* More specific selectors for blog list cards to override theme styles */
+#bloglist .card-post .card-post-summary {
+    padding: 0.5rem 1.5rem 1rem !important; /* Compact padding */
+    max-height: 120px !important; /* Limit height */
+}
+
+#bloglist .card-post .card-post-title {
+    padding: 1rem 1.5rem 0.5rem !important; /* Compact padding */
+}
+
+#bloglist .card-post .card-post-meta {
+    padding: 0.75rem 1.5rem 1rem !important; /* Reduced bottom padding */
+    color: #6b7280 !important; /* Gray color for meta info */
+    font-size: 0.875rem !important; /* Slightly smaller font */
+    border-top: 1px solid #f3f4f6 !important; /* Light border to separate meta */
+    margin-top: auto !important; /* Push meta to bottom of card */
+}
+
+/* Uniform card container sizing for blog list */
+#bloglist .card-post-container {
+    padding: 0.5rem !important; /* Space between cards */
+    display: flex !important; /* It's a flex item of #bloglist */
+    /* Remove flex-grow and flex-basis that were causing uneven stretching */
+}
+
+/* Grid layout adjustments for consistent card sizing */
+@media (min-width: 800px) {
+    #bloglist .card-post-container {
+        width: 50% !important; /* 2 columns on medium screens */
+        padding: 0.75rem !important; /* More spacing for better separation */
+    }
+}
+
+@media (min-width: 1200px) {
+    #bloglist .card-post-container {
+        width: 33.33% !important; /* 3 columns on desktop - good balance */
+        padding: 0.75rem !important; /* Consistent spacing */
+    }
+}
+
+/* Remove the 4-column layout that was creating too many narrow cards */
+
+/* Make cards consistent and proportional */
+#bloglist .card-post {
+    width: 100% !important; /* Takes full width of its container */
+    height: 100% !important; /* Fill the container */
+    /* Remove min-height to allow natural proportions */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between; /* Distribute content vertically */
+    overflow: hidden !important; /* Hide overflow */
+}
+
+/* Featured post styling */
+.featured-post {
+    width: 100% !important;
+    padding: 1rem;
+}
+
+.featured-post .card-headline {
+    /* Special override for featured post - other styles inherit from common card styles */
+    background-color: white;
+}
+
+.featured-post .card-headline-thumbnail img {
+    height: 300px; /* For smaller screens */
+    object-fit: cover !important;
+    width: 100% !important;
+}
+
+/* Special title style for featured post */
+.featured-post .card-headline-title {
+    font-size: 1.5rem !important; /* Slightly larger than regular cards */
+}
+
+.featured-post .card-headline-category {
+    font-size: 0.875rem;
+    color: #1e40af;
+    font-weight: bold;
+    text-align: right;
+    padding: 1.5rem 1.5rem 0 !important;
+}
+
+/* Improve card spacing and layout */
+#headline, #recent-posts, #headline-list {
+    padding: 1rem;
+}
+
+/* Make the cards in blog listing more uniform like the demo */
+#bloglist {
+    display: flex !important; /* Use flexbox for the list */
+    flex-wrap: wrap !important; /* Allow cards to wrap to next line */
+    margin: 0 !important; /* Remove outer margins */
+    padding: 0.5rem !important; /* Padding around the whole list, affecting outer spacing of cards */
+    align-items: stretch !important; /* Stretch items in a row to be the same height */
+}
+
+/* Style homepage card headlines like the demo */
+.card-headline {
+    background-color: white !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+.card-container:not(.featured-post) {
+    padding: 1rem !important;
+    display: flex !important;
+}
+
+#headline-list {
+    display: flex !important;
+    flex-wrap: wrap !important; 
+    margin: 0 -1rem !important;
+}
+
+#headline-list .card-container {
+    width: 100% !important;
+}
+
+/* Homepage card typography improvements */
+.card-headline .card-headline-content {
+    padding: 1.5rem !important; /* Increased padding */
+}
+
+.card-headline .card-headline-title {
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+    overflow: visible !important;
+    color: #333 !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.card-headline .card-headline-summary {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: #4b5563 !important;
+    margin-top: 0.75rem !important;
+}
+
+/* Ensure all card summaries show properly */
+.card-headline .card-headline-summary div {
+    display: block !important;
+}
+
+/* Responsive grid for homepage cards */
+@media (min-width: 800px) {
+    #headline-list .card-container {
+        width: 50% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    #headline-list .card-container {
+        width: 33.33% !important;
+    }
+}
+
+/* Ensure consistent meta info - NORMAL PADDING */
+.card-post-meta {
+    /* margin-top: auto !important; -- Removed, rely on justify-content:space-between on .card-post */
+    padding: 1rem 1.5rem !important; /* Normal padding */
+    font-size: 0.875rem !important;
+    color: #6b7280 !important;
+    border-top: 1px solid #f3f4f6;
+}
+
+/* Meta section improvements */
+.card-post-meta span {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-right: 1rem !important;
+}
+
+.card-post-meta i {
+    margin-right: 0.5rem !important;
+    color: #9ca3af !important; /* Lighter gray for icons */
+}
+
+/* Ensure proper layout for headline section */
+#headline {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+/* Clean breadcrumb styling */
+#breadcrumb {
+    display: none !important; /* Hiding as requested */
+}
+
+/* Clean up sidebar styling */
+.card-sider {
+    background-color: white !important;
+    padding: 0.75rem !important; /* Reduced padding for compactness */
+    border-radius: 0.5rem !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important; /* Lighter shadow since container has shadow */
+    margin: 0 !important; /* Remove any default margins */
+}
+
+.card-sider-title {
+    font-size: 1rem !important; /* Slightly smaller title */
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important; /* Reduced from 0.75rem */
+    color: #374151 !important; /* Dark gray color */
+}
+
+/* Compact styling for category and tag lists */
+.card-sider ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.card-sider li {
+    padding: 0.25rem 0 !important; /* Compact vertical spacing */
+    margin: 0 !important;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.card-sider li:last-child {
+    border-bottom: none;
+}
+
+.card-sider a {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.5rem 0 !important;
+    color: #374151 !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+}
+
+.card-sider a:hover {
+    color: #1e40af !important;
+    background-color: #f9fafb !important;
+    border-radius: 4px;
+}
+
+.card-sider .tag-count {
+    background-color: #e5e7eb !important;
+    color: #6b7280 !important;
+    padding: 0.125rem 0.5rem !important;
+    border-radius: 12px !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+}
+
+/* Blog page layout with sidebar - use more screen width */
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    max-width: 1600px; /* Increased from 1200px to use more screen width */
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.blog-main {
+    min-width: 0; /* Prevent grid overflow */
+}
+
+.aside-blog {
+    background-color: #f8f9fa;
+    padding: 1rem; /* Reduced from 1.5rem */
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+}
+
+.aside-blog .inner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Reduced from 1.5rem for more compact spacing */
+}
+
+.card-sider-container {
+    background: white;
+    padding: 0.25rem; /* Much smaller padding to make white box fit better */
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .aside-blog {
+        order: 2;
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+    .blog-container {
+        grid-template-columns: 1fr 250px;
+        gap: 1.5rem;
+    }
+}
+
+/* Responsive image controls for content */
+/* Override theme's full-width image behavior */
+.docs-post img,
+.blog-post img,
+.markdown img,
+main img {
+    max-width: 400px !important; /* Limit image width */
+    width: auto !important; /* Let width adjust naturally */
+    height: auto !important; /* Maintain aspect ratio */
+    display: block !important; /* Block display for proper centering */
+    margin: 1rem auto !important; /* Center the image with margins */
+    border-radius: 0.5rem !important; /* Add rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; /* Add subtle shadow */
+}
+
+/* Specific control for headshot images (like Bill's photo) */
+.docs-post img[alt="Bill"],
+.blog-post img[alt="Bill"],
+.markdown img[alt="Bill"] {
+    max-width: 200px !important; /* Smaller for headshots */
+    border-radius: 50% !important; /* Make it circular for headshots */
+}
+
+/* Responsive behavior for larger images */
+@media (max-width: 600px) {
+    .docs-post img,
+    .blog-post img,
+    .markdown img,
+    main img {
+        max-width: 300px !important; /* Smaller on mobile */
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    clear: both;
+    /* Break out of any container constraints */
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    max-width: 100vw !important;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 50, 98, 0.6); /* Berkeley Blue overlay */
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #FDB515; /* Berkeley Gold */
+    color: #003262; /* Berkeley Blue */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.hero-button:hover {
+    background-color: #C4820E;
+    color: #003262;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* Homepage content spacing */
+.homepage-content {
+    padding: 3rem 0;
+}
+
+/* Recent posts section spacing after hero */
+#headline-list {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+    width: 100%;
+    clear: both;
+}
+
+/* Ensure main content is full width and below hero */
+#main-content {
+    width: 100% !important;
+    display: block !important;
+    clear: both !important;
+    margin: 0 !important;
+}
+
+/* Override any theme flexbox that might cause side-by-side layout */
+#stager {
+    display: block !important;
+    width: 100% !important;
+}
