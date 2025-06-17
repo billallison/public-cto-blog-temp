@@ -19,3 +19,24 @@
 .card-container {
     background-color: transparent !important;
 }
+
+/* Date alignment fix - match exactly with title padding from custom.css */
+.card-headline-date {
+    /* Follow exact same pattern as .card-headline-title from custom.css */
+    display: block !important;
+    
+    /* Match the exact padding from custom.css title: 1rem 1.5rem 0.5rem */
+    padding: 0 1.5rem 0.5rem !important;
+    margin: 0 !important;
+    
+    /* Typography styling - smaller than title, but consistent positioning */
+    font-size: 0.875rem !important;
+    line-height: 1.375rem !important;
+    color: var(--slate-600) !important;
+    
+    /* Ensure consistent text flow */
+    font-weight: normal !important;
+    font-family: inherit !important;
+    text-align: left !important;
+    white-space: normal !important;
+}
