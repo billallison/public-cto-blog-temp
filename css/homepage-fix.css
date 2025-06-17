@@ -1,0 +1,21 @@
+/* Homepage background color fixes */
+
+/* Ensure cards have proper white background */
+.card-headline {
+    background-color: white !important;
+}
+
+.card-headline .card-headline-content {
+    background-color: white !important;
+}
+
+/* Make sure the homepage background is slightly gray */
+#headline-list {
+    background-color: #f1f5f9 !important; /* light gray background */
+    padding: 2rem 0 !important;
+}
+
+/* Ensure card containers don't interfere with background */
+.card-container {
+    background-color: transparent !important;
+}
