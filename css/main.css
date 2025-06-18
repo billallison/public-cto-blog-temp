@@ -997,7 +997,7 @@ figure {
     #error-404-stager .error-404-page {
       min-height: calc(100vh - 60px); } }
 
-/* Stager layout override - only apply flexbox when sidebar is present */
+/* Stager layout override - only apply flexbox when sidebar is present AND on desktop */
 @media (min-width: 800px) {
   #stager:has(aside.aside-blog),
   #stager:has(aside.aside-default) {
@@ -1032,6 +1032,35 @@ figure {
     #stager:has(aside.aside-blog) .toggles .sider-open,
     #stager:has(aside.aside-default) .toggles .sider-open {
       display: none !important; } }
+
+/* Mobile-specific overrides for blog pages */
+@media (max-width: 799px) {
+  #stager {
+    display: block !important;
+    flex-direction: column !important; }
+    #stager main {
+      width: 100% !important;
+      flex: none !important;
+      overflow: visible !important; }
+    #stager aside.aside-blog,
+    #stager aside.aside-default {
+      width: 100% !important;
+      position: static !important;
+      margin-top: 1rem; }
+  /* Ensure blog cards don't overflow on mobile */
+  #bloglist {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.5rem !important; }
+    #bloglist .card-post-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0.25rem !important;
+      box-sizing: border-box !important; }
+      #bloglist .card-post-container .card-post {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important; } }
 
 /* Ensure blog listing page layout is not affected by stager flexbox */
 #bloglist {
