@@ -578,61 +578,84 @@ body {
     font-weight: 500 !important;
 }
 
-/* Blog page layout with sidebar - use more screen width */
-.blog-container {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 2rem;
-    max-width: 1600px; /* Increased from 1200px to use more screen width */
-    margin: 0 auto;
-    padding: 2rem;
+/* Hide back-to-top button on blog pages for all screen sizes */
+.totop {
+    display: none !important;
 }
 
-.blog-main {
-    min-width: 0; /* Prevent grid overflow */
-}
-
-.aside-blog {
-    background-color: #f8f9fa;
-    padding: 1rem; /* Reduced from 1.5rem */
-    border-radius: 8px;
-    height: fit-content;
-    position: sticky;
-    top: 2rem;
-}
-
-.aside-blog .inner-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* Reduced from 1.5rem for more compact spacing */
-}
-
-.card-sider-container {
-    background: white;
-    padding: 0.25rem; /* Much smaller padding to make white box fit better */
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .blog-container {
-        grid-template-columns: 1fr;
-        padding: 1rem;
+/* Mobile responsive - simplified layout for blog pages */
+@media (max-width: 800px) {
+    /* Force override of theme's mobile sidebar behavior */
+    #stager aside,
+    #stager .aside-blog,
+    #stager aside.aside-blog {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        z-index: auto !important;
+        background: transparent !important;
+        margin-top: 2rem !important;
+        transform: none !important;
+        display: block !important;
+        /* Force visibility */
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
-    .aside-blog {
-        order: 2;
-        position: static;
-        margin-top: 2rem;
+    /* Override theme's flexbox layout on mobile */
+    #stager {
+        display: block !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
     }
-}
-
-/* Tablet responsive */
-@media (max-width: 1024px) {
-    .blog-container {
-        grid-template-columns: 1fr 250px;
-        gap: 1.5rem;
+    
+    /* Ensure main content comes first */
+    #stager main {
+        order: 1 !important;
+        flex: none !important;
+        overflow: visible !important;
+        width: 100% !important;
+    }
+    
+    /* Force sidebar to come after main content */
+    #stager .aside-blog {
+        order: 2 !important;
+    }
+    
+    /* Hide all toggle buttons and controls on mobile */
+    #stager .toggles,
+    .toggles,
+    .sider-open,
+    .sider-close,
+    .totop {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Ensure inner container is not constrained */
+    #stager aside .inner-container {
+        height: auto !important;
+        overflow: visible !important;
+        position: static !important;
+        top: auto !important;
+        z-index: auto !important;
+    }
+    
+    /* Ensure blog posts are single column on mobile */
+    #bloglist .card-post-container {
+        width: 100% !important;
+    }
+    
+    /* Ensure no JavaScript animations can override our positioning */
+    #stager aside,
+    #stager .aside-blog {
+        transition: none !important;
+        animation: none !important;
     }
 }
 
