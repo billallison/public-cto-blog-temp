@@ -1120,3 +1120,18 @@ aside.aside-default .inner-container {
 .card-sider {
   overflow: visible !important;
   position: relative !important; }
+
+/* Full-width layout when left navigation is hidden */
+.main-full-width {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important; }
+  .main-full-width #docspost {
+    max-width: 800px !important;
+    margin: 0 auto !important; }
+  @media (max-width: 768px) {
+    .main-full-width {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important; } }
