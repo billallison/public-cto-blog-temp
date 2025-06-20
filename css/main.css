@@ -1129,9 +1129,21 @@ aside.aside-default .inner-container {
   padding-left: 1rem !important;
   padding-right: 1rem !important; }
   .main-full-width #docspost {
-    max-width: 800px !important;
-    margin: 0 auto !important; }
+    max-width: 1200px !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important; }
+    .main-full-width #docspost .docs-post .post-content {
+      max-width: 100% !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important; }
+  @media (max-width: 1200px) {
+    .main-full-width #docspost {
+      width: 95% !important; } }
   @media (max-width: 768px) {
     .main-full-width {
       padding-left: 0.5rem !important;
-      padding-right: 0.5rem !important; } }
+      padding-right: 0.5rem !important; }
+      .main-full-width #docspost {
+        width: 98% !important; } }
