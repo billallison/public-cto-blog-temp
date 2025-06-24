@@ -899,6 +899,73 @@ figure {
     font-size: .875rem;
     padding: .5rem 0; }
 
+/* ========================================================================
+   ACCESSIBILITY OVERRIDES
+   Ensuring WCAG 2.1 AA compliance by making links clearly distinguishable
+   ======================================================================== */
+/* Override theme link styling to ensure body content links are underlined by default */
+.markdown a,
+.blog-post-container a,
+.docs-post .post-content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px; }
+  .markdown a:hover,
+  .blog-post-container a:hover,
+  .docs-post .post-content a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px; }
+  .markdown a:focus,
+  .blog-post-container a:focus,
+  .docs-post .post-content a:focus {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px; }
+
+/* Exclude navigation and UI elements from underline requirement */
+nav a,
+.menu-main a,
+.menu-tree a,
+.breadcrumb a,
+.paginator a,
+.navigator a,
+.card-post a,
+.card-sider a,
+.card-headline a,
+header a,
+footer a,
+.toc a {
+  text-decoration: none; }
+  nav a:hover,
+  .menu-main a:hover,
+  .menu-tree a:hover,
+  .breadcrumb a:hover,
+  .paginator a:hover,
+  .navigator a:hover,
+  .card-post a:hover,
+  .card-sider a:hover,
+  .card-headline a:hover,
+  header a:hover,
+  footer a:hover,
+  .toc a:hover {
+    text-decoration: none; }
+  nav a:focus,
+  .menu-main a:focus,
+  .menu-tree a:focus,
+  .breadcrumb a:focus,
+  .paginator a:focus,
+  .navigator a:focus,
+  .card-post a:focus,
+  .card-sider a:focus,
+  .card-headline a:focus,
+  header a:focus,
+  footer a:focus,
+  .toc a:focus {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+    text-decoration: none; }
+
 /* Custom 404 Page Styles */
 .error-404-page {
   width: 100%;
