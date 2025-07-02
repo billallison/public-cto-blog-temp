@@ -1214,3 +1214,43 @@ aside.aside-default .inner-container {
       padding-right: 0.5rem !important; }
       .main-full-width #docspost {
         width: 98% !important; } }
+/* ========================================================================
+   ACCESSIBILITY COLOR CONTRAST FIXES
+   Direct color overrides to ensure WCAG 2.1 AA compliance
+   ======================================================================== */
+/* Force all links to use darker blue colors for better contrast */
+a {
+  color: #0369a1 !important;
+  /* Dark blue instead of light blue */ }
+
+/* Specific overrides for different link contexts */
+.card-post a,
+.card-headline a,
+.markdown a,
+.blog-post-container a,
+.docs-post .post-content a {
+  color: #0369a1 !important;
+  /* Dark blue for content links */ }
+
+/* Category labels and headers - HIGH SPECIFICITY */
+.card-headline .card-headline-content .card-headline-category,
+.card-post .category,
+.card-headline .category,
+.card-headline-category,
+.card-post-category,
+div[class*="category"],
+[class*="category"] {
+  color: #003262 !important;
+  /* Berkeley Blue - matches header/navigation */ }
+
+/* Navigation and UI links can be slightly different but still accessible */
+nav a,
+.menu-main a,
+.breadcrumb a {
+  color: #0284c7 !important;
+  /* Dark blue for navigation */ }
+
+/* Ensure hover states are also accessible */
+a:hover {
+  color: #075985 !important;
+  /* Even darker on hover */ }
